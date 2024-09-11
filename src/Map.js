@@ -4,13 +4,13 @@ import './styles/map.css';
 
 const Map = () => {
   useEffect(() => {
-    const map = L.map('map').setView([1.0151, 35.0077], 10);
+    let map = L.map('map').setView([1.0151, 35.0077], 10);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    const gasStations = [
+    let gasStations = [
       // Add your gas stations here, as in map.js
     ];
 
@@ -25,7 +25,7 @@ const Map = () => {
       marker._icon.classList.add('blink');
     });
 
-    const urlParams = new URLSearchParams(window.location.search);
+    let urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('focus') === 'kitale') {
       map.setView([1.0151, 35.0077], 12);
     }
