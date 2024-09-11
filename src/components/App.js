@@ -1,8 +1,8 @@
 import React from 'react';
+import '../styles/style.css';  // Import main styles
+import SearchButton from './components/SearchButton';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SearchButton from './SearchButton';
-import Map from './Map';
-import '../styles/style.css';
+import Map from './components/Map';
 
 function App() {
   return (
