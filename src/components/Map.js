@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import React, { useEffect } from 'react';
 import L from 'leaflet';
 import "leaflet/dist/leaflet.css";
@@ -13,21 +13,21 @@ const gasStations = [
 
 const Map = () => {
   useEffect(() => {
+    const checkNearbyGasStation = (userLatitude, userLongitude) => {
+      gasStations.forEach((station) => {
+        const stationDistance = calculateDistance(userLatitude, userLongitude, station.latitude, station.longitude);
+        if (stationDistance < 0.5) {
+          alert(`A gas station (${station.name}) is nearby!`);
+        }
+      });
+    };
+
     navigator.geolocation.getCurrentPosition((position) => {
       const userLatitude = position.coords.latitude;
       const userLongitude = position.coords.longitude;
       checkNearbyGasStation(userLatitude, userLongitude);
     });
   }, []);
-
-  const checkNearbyGasStation = (userLatitude, userLongitude) => {
-    gasStations.forEach((station) => {
-      const stationDistance = calculateDistance(userLatitude, userLongitude, station.latitude, station.longitude);
-      if (stationDistance < 0.5) {
-        alert(`A gas station (${station.name}) is nearby!`);
-      }
-    });
-  };
 
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371; // Radius of the Earth in km
