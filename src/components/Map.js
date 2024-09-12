@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import L from 'leaflet';
-import "leaflet/dist/leaflet.css";
 import '../styles/map.css';
 
 const Map = () => {
