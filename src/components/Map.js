@@ -15,17 +15,12 @@ const Map = () => {
     ];
 
     gasStations.forEach(station => {
-      let popupContent = `
-        <div class="popup-content">
-          <b>${station.name}</b><br>
-          ${station.fuel.map(fuel => `
-            Fuel Type: <span class="fuel-type">${fuel.type}</span><br>
-            Price: KES <span class="price">${fuel.price}</span><br>
-          `).join('')}
-          <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a>
-        </div>
-      `;
-
+      let popupContent = <div class="popup-content"><b>${station.name}</b><br>;
+      station.fuel.forEach(fuel => {
+        popupContent += Fuel Type: <span class="fuel-type">${fuel.type}</span><br>Price: KES <span class="price">${fuel.price}</span><br>;
+      });
+      popupContent += <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a></div>;
+      
       let marker = L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
       marker._icon.classList.add('blink');
     });
