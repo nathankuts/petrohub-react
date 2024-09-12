@@ -1,6 +1,5 @@
 import React from 'react';
 import L from 'leaflet';
-import React, { useEffect } from 'react';
 
 
 const GasStationMarker = ({ station, map }) => {
