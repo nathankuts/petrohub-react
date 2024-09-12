@@ -15,7 +15,7 @@ const Map = () => {
     ];
 
     gasStations.forEach(station => {
-      const popupContent = `<div class="popup-content"><b>${station.name}</b><br>`;
+      let popupContent = `<div class="popup-content"><b>${station.name}</b><br>`;
       station.fuel.forEach(fuel => {
         popupContent += `Fuel Type: <span class="fuel-type">${fuel.type}</span><br>Price: KES <span class="price">${fuel.price}</span><br>`;
       });
