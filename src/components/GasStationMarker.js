@@ -2,7 +2,7 @@ import React from 'react';
 import L from 'leaflet';
 import React, { useEffect } from 'react';
 
-const GasStationMarker = ({ station }) => {
+const GasStationMarker = ({ station, map }) => {
   useEffect(() => {
     const popupContent = `<div class="popup-content"><b>${station.name}</b><br>`;
     station.fuel.forEach(fuel => {
@@ -12,7 +12,7 @@ const GasStationMarker = ({ station }) => {
     
     const marker = L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
     marker._icon.classList.add('blink');
-  }, [station]);
+  }, [station, map]);
 
   return null;
 };
