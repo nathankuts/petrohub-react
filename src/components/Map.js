@@ -4,13 +4,22 @@ import '../styles/map.css';
 
 const Map = () => {
   useEffect(() => {
-    // Create a new map instance if it doesn't exist
+    const mapContainer = document.getElementById('map');
+
+    // Check if the map container is found
+    if (!mapContainer) {
+      console.error('Map container not found');
+      return;
+    }
+
+    // Remove existing map if it exists
     if (window.map) {
-      window.map.remove(); // Remove the existing map instance
+      window.map.remove();
+      window.map = null;
     }
 
     // Initialize the map
-    const map = L.map('map').setView([1.0151, 35.0077], 10);
+    const map = L.map(mapContainer).setView([1.0151, 35.0077], 10);
     window.map = map; // Store the map instance globally
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -41,8 +50,7 @@ const Map = () => {
           <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a>
         </div>`;
       
-      let marker = L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
-      marker._icon.classList.add('blink');
+      L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
     });
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -59,7 +67,7 @@ const Map = () => {
     };
   }, []);
 
-  return <div id="map"></div>;
+  return <div id="map" style={{ height: '100vh', width: '100%' }}></div>;
 };
 
 export default Map;
