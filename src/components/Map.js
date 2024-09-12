@@ -4,70 +4,34 @@ import '../styles/map.css';
 
 const Map = () => {
   useEffect(() => {
-    const mapContainer = document.getElementById('map');
-
-    // Check if the map container is found
-    if (!mapContainer) {
-      console.error('Map container not found');
-      return;
-    }
-
-    // Remove existing map if it exists
-    if (window.map) {
-      window.map.remove();
-      window.map = null;
-    }
-
-    // Initialize the map
-    const map = L.map(mapContainer).setView([1.0151, 35.0077], 10);
-    window.map = map; // Store the map instance globally
+    const map = L.map('map').setView([1.0151, 35.0077], 10);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     const gasStations = [
-      {
-        name: "Station 1",
-        latitude: 1.0151,
-        longitude: 35.0077,
-        fuel: [
-          { type: "Petrol", price: 130 },
-          { type: "Diesel", price: 115 }
-        ]
-      },
-      // Add more stations here...
+      // Add your gas stations here, as in map.js
     ];
 
     gasStations.forEach(station => {
-      let popupContent = `
-        <div class="popup-content">
-          <b>${station.name}</b><br>
-          ${station.fuel.map(fuel => `
-            Fuel Type: <span class="fuel-type">${fuel.type}</span><br>
-            Price: KES <span class="price">${fuel.price}</span><br>
-          `).join('')}
-          <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a>
-        </div>`;
+      let popupContent = <div class="popup-content"><b>${station.name}</b><br>;
+      station.fuel.forEach(fuel => {
+        popupContent += Fuel Type: <span class="fuel-type">${fuel.type}</span><br>Price: KES <span class="price">${fuel.price}</span><br>;
+      });
+      popupContent += <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a></div>;
       
-      L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
+      let marker = L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
+      marker._icon.classList.add('blink');
     });
 
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('focus') === 'kitale') {
       map.setView([1.0151, 35.0077], 12);
     }
-
-    // Cleanup function to remove the map when the component unmounts
-    return () => {
-      if (window.map) {
-        window.map.remove();
-        window.map = null; // Clear the global map reference
-      }
-    };
   }, []);
 
-  return <div id="map" style={{ height: '100vh', width: '100%' }}></div>;
+  return <div id="map"></div>;
 };
 
 export default Map;
