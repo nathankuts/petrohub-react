@@ -4,7 +4,14 @@ import '../styles/map.css';
 
 const Map = () => {
   useEffect(() => {
+    // Create a new map instance if it doesn't exist
+    if (window.map) {
+      window.map.remove(); // Remove the existing map instance
+    }
+
+    // Initialize the map
     const map = L.map('map').setView([1.0151, 35.0077], 10);
+    window.map = map; // Store the map instance globally
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -42,6 +49,14 @@ const Map = () => {
     if (urlParams.get('focus') === 'kitale') {
       map.setView([1.0151, 35.0077], 12);
     }
+
+    // Cleanup function to remove the map when the component unmounts
+    return () => {
+      if (window.map) {
+        window.map.remove();
+        window.map = null; // Clear the global map reference
+      }
+    };
   }, []);
 
   return <div id="map"></div>;
