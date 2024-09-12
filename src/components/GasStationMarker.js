@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import L from 'leaflet';
+import React, { useState } from 'react';
+import { Marker, Popup } from "react-leaflet";
 
 
 const GasStationMarker = ({ station, map }) => {
