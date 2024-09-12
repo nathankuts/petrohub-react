@@ -11,15 +11,28 @@ const Map = () => {
     }).addTo(map);
 
     const gasStations = [
-      // Add your gas stations here, as in map.js
+      {
+        name: "Station 1",
+        latitude: 1.0151,
+        longitude: 35.0077,
+        fuel: [
+          { type: "Petrol", price: 130 },
+          { type: "Diesel", price: 115 }
+        ]
+      },
+      // Add more stations here...
     ];
 
     gasStations.forEach(station => {
-      let popupContent = <div class="popup-content"><b>${station.name}</b><br>;
-      station.fuel.forEach(fuel => {
-        popupContent += Fuel Type: <span class="fuel-type">${fuel.type}</span><br>Price: KES <span class="price">${fuel.price}</span><br>;
-      });
-      popupContent += <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a></div>;
+      let popupContent = `
+        <div class="popup-content">
+          <b>${station.name}</b><br>
+          ${station.fuel.map(fuel => `
+            Fuel Type: <span class="fuel-type">${fuel.type}</span><br>
+            Price: KES <span class="price">${fuel.price}</span><br>
+          `).join('')}
+          <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a>
+        </div>`;
       
       let marker = L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
       marker._icon.classList.add('blink');
@@ -34,22 +47,4 @@ const Map = () => {
   return <div id="map"></div>;
 };
 
-export default Map; src/components/SearchButton.js: import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-const SearchButton = () => {
-  const navigate = useNavigate();
-
-  const searchGasStations = () => {
-    navigate('/map?focus=kitale');
-  };
-
-  return (
-    <div>
-      <h1>PetroHub</h1>
-      <button onClick={searchGasStations}>Search available gas stations</button>
-    </div>
-  );
-};
-
-export default SearchButton;
+export default Map;
