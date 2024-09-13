@@ -10,7 +10,10 @@ function App() {
       <div id="app">
         <Routes>
           <Route path="/" element={<SearchButton />} />
-          <Route path="/map" element={<Map />} />
+          <Route 
+            path="/map" 
+            element={<div style={{ width: '100%', height: '100vh' }}><Map /></div>} 
+          />
         </Routes>
       </div>
     </Router>
