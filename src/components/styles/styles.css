@@ -47,11 +47,8 @@ table {
 }
 
 .leaflet-container {
-  position: relative;
-  width: 1340px;
-  height: 641px;
+  height: 100vh;
 }
-
 #root {
   height: 100vh;
 }
