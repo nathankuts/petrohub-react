@@ -4,7 +4,6 @@ import SearchButton from './SearchButton';
 import Map from './Map';
 import '../styles/styles.css';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 function App() {
   return (
