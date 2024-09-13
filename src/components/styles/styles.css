@@ -49,10 +49,6 @@ table {
     height: 100vh;
     width: 100%;
 }
-.leaflet-container {
-  height: 100vh;
-  width: 100%;
-}
 
 body {
     display: flex;
@@ -117,4 +113,8 @@ button:hover {
     width: 120%; /* Expand width for desktop */
     margin-right: 5px;
   }
+}
+
+.leaflet-container {
+  height: 100vh;
 }
