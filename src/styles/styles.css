@@ -45,6 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.leaflet-container {
+  height: 100vh;
+}
 
 body {
     display: flex;
