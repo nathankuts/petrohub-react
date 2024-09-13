@@ -46,6 +46,14 @@ table {
   border-spacing: 0;
 }
 
+.leaflet-container {
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -109,16 +117,4 @@ button:hover {
     width: 120%; /* Expand width for desktop */
     margin-right: 5px;
   }
-}
-
-.leaflet-container {
-  height: 100vh;
-}
-
-#root {
-  height: 100vh;
-}
-#map {
-    height: 100vh;
-    width: 100%;
 }
