@@ -10,7 +10,14 @@ function App() {
       <div id="app">
         <Routes>
           <Route path="/" element={<SearchButton />} />
+<<<<<<< HEAD
           <Route path="/map" element={<div style={{ width: '100%', height: '100vh' }} center={center} zoom={13}><Map /></div>} />
+=======
+          <Route 
+            path="/map" 
+            element={<div style={{ width: '100%', height: '100vh' }}><Map /></div>} 
+          />
+>>>>>>> 22344352a61b31e937cc4a3f5897c96df783240f
         </Routes>
       </div>
     </Router>
