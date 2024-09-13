@@ -11,6 +11,13 @@ const Map = () => {
     }).addTo(map);
 
     const gasStations = [
+      {
+        name: "Kipetro Gas Station",
+        fuel: [{ type: "Petrol", price: 150 }],
+        latitude: 1.0151,
+        longitude: 35.0077,
+      },
+      
       // Add your gas stations here, as in map.js
     ];
 
