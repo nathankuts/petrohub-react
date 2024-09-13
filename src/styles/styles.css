@@ -45,8 +45,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.leaflet-container {
-  height: 100vh;
+.leaflet-layer {
+  
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 body {
