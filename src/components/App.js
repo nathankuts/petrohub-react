@@ -11,7 +11,9 @@ function App() {
       <div id="app">
         <Routes>
           <Route path="/" element={<SearchButton />} />
-          <Route path="/map" element={<Map />} />
+          <Mapcontainer>
+            <Route path="/map" element={<Map />} />
+          </Mapcontainer>
         </Routes>
       </div>
     </Router>
