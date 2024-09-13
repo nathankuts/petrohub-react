@@ -1,9 +1,9 @@
+import 'leaflet/dist/leaflet.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SearchButton from './SearchButton';
 import Map from './Map';
 import './styles/styles.css';
-import 'leaflet/dist/leaflet.css';
 
 function App() {
   return (
