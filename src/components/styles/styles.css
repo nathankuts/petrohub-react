@@ -45,6 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.leaflet-container {
+  height: 100vh;
+}
 
 body {
     display: flex;
@@ -99,9 +102,6 @@ button:hover {
   background-color: rgb(183 236 184); 
 }
 
-.leaflet-container {
-  height: 100vh;
-}
 /* Desktop view adjustments */
 @media (min-width: 768px) {
   body {
