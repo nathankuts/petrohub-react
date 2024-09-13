@@ -1,3 +1,4 @@
+import 'leaflet/dist/leaflet.css';
 import React, { useEffect } from 'react';
 import L from 'leaflet';
 import './styles/map.css';
