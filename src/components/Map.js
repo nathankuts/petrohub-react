@@ -18,18 +18,24 @@ const Map = () => {
         latitude: 1.0151,
         longitude: 35.0077,
       },
-      
-      // Add your gas stations here, as in map.js
+      // Add more stations here
     ];
 
     gasStations.forEach(station => {
-      let popupContent = <div class="popup-content"><b>${station.name}</b><br>;
-      station.fuel.forEach(fuel => {
-        popupContent += Fuel Type: <span class="fuel-type">${fuel.type}</span><br>Price: KES <span class="price">${fuel.price}</span><br>;
-      });
-      popupContent += <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a></div>;
-      
-      const marker = L.marker([station.latitude, station.longitude]).addTo(map).bindPopup(popupContent);
+      let popupContent = `
+        <div class="popup-content">
+          <b>${station.name}</b><br>
+          ${station.fuel.map(fuel => `
+            Fuel Type: <span class="fuel-type">${fuel.type}</span><br>
+            Price: KES <span class="price">${fuel.price}</span><br>
+          `).join('')}
+          <a href="gas_station_details_${station.name.replace(/\s+/g, '_').toLowerCase()}.html">More Details</a>
+        </div>
+      `;
+
+      const marker = L.marker([station.latitude, station.longitude])
+        .addTo(map)
+        .bindPopup(popupContent);
       marker._icon.classList.add('blink');
     });
 
@@ -40,7 +46,7 @@ const Map = () => {
     map.invalidateSize();
   }, []);
 
-  return <div id="map"></div>;
+  return <div id="map" style={{ height: "100vh" }}></div>;
 };
 
 export default Map;
