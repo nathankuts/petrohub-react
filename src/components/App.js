@@ -4,6 +4,7 @@ import SearchButton from './SearchButton';
 import Map from './Map';
 import '../styles/styles.css';
 
+
 function App() {
   return (
     <Router>

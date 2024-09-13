@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import L from 'leaflet';
 import './styles/map.css';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 
 const Map = () => {
   useEffect(() => {
