@@ -1,7 +1,7 @@
 /* CSS /* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
   License: none (public domain)
 */
-
+@import (
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,7 +47,7 @@ table {
 }
 
 .leaflet-container {
-  height: 100vh;
+  height: 300px;
 }
 
 #root {
