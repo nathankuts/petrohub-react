@@ -5,15 +5,14 @@
 
 .leaflet-marker-icon {
   display: block;
-  width: 25px;  /* Adjust the size as needed */
-  height: 41px; /* Adjust the size as needed */
-  background-image: url('./download.png'); /* Make sure the path to your icon is correct */
+  width: 25px;
+  height: 41px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/RedDot.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  position: absolute; /* Leaflet uses absolute positioning */
-  z-index: 1000; /* Make sure it appears above other map layers */
+  position: absolute;
+  z-index: 1000;
 }
-
 
 .popup-content {
     background-color: #044004;
