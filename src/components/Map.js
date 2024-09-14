@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import L from 'leaflet';
-import GasStationMarker from './GasStationMarker';
 import './styles/map.css';
+import 'leaflet/dist/leaflet.css';
 
 const Map = () => {
   useEffect(() => {
