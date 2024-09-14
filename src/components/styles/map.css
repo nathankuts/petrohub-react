@@ -12,7 +12,11 @@
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1000;
+  border: none;       /* Remove border */
+  outline: none;      /* Remove outline */
+  box-shadow: none;   /* Remove any box shadow */
 }
+
 
 .popup-content {
     background-color: #044004;
