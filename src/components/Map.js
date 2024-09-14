@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import L from 'leaflet';
 import './styles/map.css';
+import icon from 'leaflet/dist/images/marker-icon.png';
 
 const Map = () => {
   useEffect(() => {
