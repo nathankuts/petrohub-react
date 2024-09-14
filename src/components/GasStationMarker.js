@@ -7,7 +7,6 @@ import markerIconRetina from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 const GasStationMarker = ({ station, map }) => {
-  useEffect(() => {
     const popupContent = `
       <div class="popup-content"><b>${station.name}</b><br>
       ${station.fuel.map(fuel => `
