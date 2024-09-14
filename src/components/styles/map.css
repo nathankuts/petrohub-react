@@ -12,14 +12,6 @@
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1000;
-  border: none;       /* Remove border */
-  outline: none;      /* Remove outline */
-  box-shadow: none;   /* Remove any box shadow */
-}
-.leaflet-marker-icon {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
 }
 
 
