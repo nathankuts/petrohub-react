@@ -152,7 +152,7 @@ const Map = () => {
             { type: "Regular", price: 132 },
             { type: "Premium", price: 132 }
         ], 
-        latitude: , 
+        latitude: 1.1234, 
         longitude: 35.00295 
     },
     { 
