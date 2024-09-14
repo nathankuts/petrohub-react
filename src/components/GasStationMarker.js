@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
 import React from 'react';
 import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 const GasStationMarker = ({ station }) => {
   useEffect(() => {
