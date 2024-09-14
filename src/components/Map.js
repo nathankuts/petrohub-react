@@ -12,10 +12,10 @@ const Map = () => {
 
     const gasStations = [
       {
-        name: "Kipetro Gas Station",
-        fuel: [{ type: "Petrol", price: 150 }],
-        latitude: 1.0151,
-        longitude: 35.0077,
+        name: "Total",
+        fuel: [{ type: "Petrol", price: 150 }, {type: "Diesel", price: 125 }],
+        latitude: 1.0123,
+        longitude: 35.0112
       },
       // Add more stations here
     ];
