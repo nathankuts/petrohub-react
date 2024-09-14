@@ -42,7 +42,6 @@ const Map = () => {
     if (urlParams.get('focus') === 'kitale') {
       map.setView([1.0151, 35.0077], 12);
     }
-    map.invalidateSize();
   }, []);
 
   return <div id="map" style={{ height: "100vh" }}></div>;
