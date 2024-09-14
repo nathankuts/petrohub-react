@@ -5,14 +5,15 @@
 
 .leaflet-marker-icon {
   display: block;
-  width: 25px;  /* Default width of the Leaflet icon */
-  height: 41px; /* Default height of the Leaflet icon */
+  width: 25px;  /* Adjust the size as needed */
+  height: 41px; /* Adjust the size as needed */
+  background-image: url('.styles/download.png'); /* Make sure the path to your icon is correct */
   background-size: contain;
   background-repeat: no-repeat;
-  position: absolute;
-  z-index: 1000; /* Ensure it appears above other map layers */
-  opacity: 1;    /* Make sure it's fully visible */
+  position: absolute; /* Leaflet uses absolute positioning */
+  z-index: 1000; /* Make sure it appears above other map layers */
 }
+
 
 .popup-content {
     background-color: #044004;
