@@ -7,7 +7,7 @@
   display: block;
   width: 25px;  /* Adjust the size as needed */
   height: 41px; /* Adjust the size as needed */
-  background-image: url('/styles/download.png'); /* Make sure the path to your icon is correct */
+  background-image: url('./download.png'); /* Make sure the path to your icon is correct */
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute; /* Leaflet uses absolute positioning */
