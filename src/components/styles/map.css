@@ -16,6 +16,11 @@
   outline: none;      /* Remove outline */
   box-shadow: none;   /* Remove any box shadow */
 }
+.leaflet-marker-icon {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 
 .popup-content {
