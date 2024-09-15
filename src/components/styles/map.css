@@ -15,7 +15,7 @@
 }
 
 .leaflet-default-icon-path {
-    background-image-url (./download.png);
+    background-image: url (./download.png);
 }
 
 .popup-content {
