@@ -14,6 +14,9 @@
   z-index: 1000;
 }
 
+.leaflet-default-icon-path {
+    background-image-url (./download.png);
+}
 
 .popup-content {
     background-color: #044004;
