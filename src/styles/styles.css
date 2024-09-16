@@ -52,10 +52,6 @@ table {
   top: 0;
 }
 
-.leaflet-default-icon-path {
-  background-image: url('/styles/download.png');
-}
-
 body {
     display: flex;
     justify-content: center;
