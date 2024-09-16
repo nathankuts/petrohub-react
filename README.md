@@ -24,4 +24,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-![Alt Text](public/images/Screenshot (26).png)
+![Alt text](https://github.com/nathankuts/petrohub-react/blob/master/public/images/Screenshot%20(26).png)
