@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<SearchButton />} />
           <Route
             path="/map"
-            element={<Map style={{ width: '100%', height: '641px' }} />}
+            element={<Map />}
           />
         </Routes>
       </div>
