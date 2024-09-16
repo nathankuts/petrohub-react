@@ -7,7 +7,7 @@
   display: block;
   width: 25px;
   height: 41px;
-  background-image: url('./download.png');
+  background-image: url('images/download.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
